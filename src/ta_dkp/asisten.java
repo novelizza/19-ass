@@ -5,6 +5,7 @@
  */
 package ta_dkp;
 
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -94,7 +95,8 @@ public class asisten extends javax.swing.JFrame {
         t1 = new javax.swing.JRadioButton();
         y1 = new javax.swing.JRadioButton();
         btnSimpan = new javax.swing.JButton();
-        btnClear = new javax.swing.JButton();
+        btnReset = new javax.swing.JButton();
+        btnKembali = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -464,7 +466,19 @@ public class asisten extends javax.swing.JFrame {
             }
         });
 
-        btnClear.setText("Clear");
+        btnReset.setText("Reset");
+        btnReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResetActionPerformed(evt);
+            }
+        });
+
+        btnKembali.setText("Keluar");
+        btnKembali.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKembaliActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -503,9 +517,12 @@ public class asisten extends javax.swing.JFrame {
                                             .addComponent(tvKelamin))))
                                 .addGap(111, 111, 111))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(btnClear)
-                                .addGap(18, 18, 18)
-                                .addComponent(btnSimpan)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(btnKembali, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(btnReset)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(btnSimpan)))
                                 .addGap(41, 41, 41)))
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 192, Short.MAX_VALUE)))
@@ -552,7 +569,9 @@ public class asisten extends javax.swing.JFrame {
                         .addGap(21, 21, 21)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnSimpan)
-                            .addComponent(btnClear))))
+                            .addComponent(btnReset))
+                        .addGap(18, 18, 18)
+                        .addComponent(btnKembali)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
                 .addContainerGap())
@@ -791,8 +810,36 @@ public class asisten extends javax.swing.JFrame {
             DefaultTableModel model = (DefaultTableModel) tblHasil.getModel();
             model.addRow(new Object[]{i,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11});
             this.i++;
+            setClear();
         }
     }//GEN-LAST:event_btnSimpanActionPerformed
+
+    private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
+        // TODO add your handling code here:
+        int jawab = JOptionPane.showOptionDialog(this, 
+                    "Ingin mereset kolom ?", 
+                    "Reset", 
+                    JOptionPane.YES_NO_OPTION, 
+                    JOptionPane.QUESTION_MESSAGE, null, null, null);
+        
+        if(jawab == JOptionPane.YES_OPTION){
+            reset();
+        }
+    }//GEN-LAST:event_btnResetActionPerformed
+
+    private void btnKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKembaliActionPerformed
+        // TODO add your handling code here:
+        int jawab = JOptionPane.showOptionDialog(this, 
+                    "Keluar memnyebabkan kolom hilang, setuju ?", 
+                    "Keluar", 
+                    JOptionPane.YES_NO_OPTION, 
+                    JOptionPane.QUESTION_MESSAGE, null, null, null);
+    
+        if(jawab == JOptionPane.YES_OPTION){
+            this.setVisible(false);
+            this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); 
+        }
+    }//GEN-LAST:event_btnKembaliActionPerformed
 
     /**
      * @param args the command line arguments
@@ -830,7 +877,8 @@ public class asisten extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnClear;
+    private javax.swing.JButton btnKembali;
+    private javax.swing.JButton btnReset;
     private javax.swing.JButton btnSimpan;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
@@ -900,5 +948,38 @@ public class asisten extends javax.swing.JFrame {
         tvPekerjaan.setText(this.Pekerjaan);
     }
     
+    private void setClear(){
+        y1.setSelected(false);
+        y2.setSelected(false);
+        y3.setSelected(false);
+        y4.setSelected(false);
+        y5.setSelected(false);
+        y6.setSelected(false);
+        y7.setSelected(false);
+        y8.setSelected(false);
+        y9.setSelected(false);
+        y10.setSelected(false);
+        y11.setSelected(false);
+        
+        t1.setSelected(false);
+        t2.setSelected(false);
+        t3.setSelected(false);
+        t4.setSelected(false);
+        t5.setSelected(false);
+        t6.setSelected(false);
+        t7.setSelected(false);
+        t8.setSelected(false);
+        t9.setSelected(false);
+        t10.setSelected(false);
+        t11.setSelected(false);
+    }
+    
+    private void reset(){
+        DefaultTableModel model = (DefaultTableModel) tblHasil.getModel();
+        int row = model.getRowCount();
+        for(int i=row-1;i>=0;i--){           
+            model.removeRow(i);
+        };
+    }
     
 }
