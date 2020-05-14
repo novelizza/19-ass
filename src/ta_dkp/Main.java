@@ -19,6 +19,7 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
+        this.setTitle("19-Ass (Program Asisten Covid-19)");
         String []book={"Nama","Umur","Kelamin","Alamat","Hp","Pekerjaan"};
         DefaultTableModel model=new DefaultTableModel(book,0);
         tblAkun.setModel(model);
@@ -202,4 +203,18 @@ public class Main extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel)tblAkun.getModel();
         model.addRow(dataRow);
     }
+    
+    static void hapus(String nama){
+        int row = tblAkun.getRowCount();
+        DefaultTableModel model = (DefaultTableModel)tblAkun.getModel();
+        for(int a=0; a<row; a++){
+            String cek = model.getValueAt(a, 0).toString();
+            
+            if(cek.equals(nama)){
+                model.removeRow(a);
+            }
+        }
+    }
+    
+    
 }

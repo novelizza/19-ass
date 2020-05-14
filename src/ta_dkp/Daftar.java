@@ -19,6 +19,7 @@ public class Daftar extends javax.swing.JFrame {
      */
     public Daftar() {
         initComponents();
+        this.setTitle("19-Ass (Program Asisten Covid-19)");
     }
 
     /**

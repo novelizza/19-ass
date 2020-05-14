@@ -21,13 +21,14 @@ public class asisten extends javax.swing.JFrame {
     private String Alamat;
     private int Hp;
     private String Pekerjaan;
-    private int i=1;
+    private int i=1, cek=0;
 
     /**
      * Creates new form asisten
      */
     public asisten() {
         initComponents();
+        this.setTitle("19-Ass (Program Asisten Covid-19)");
         String []book={"Hari","Napas Pendek","Demam","Batuk","Menggigil dan Pegal pegal","Pilek","Masalah Pencernaan",
             "Mata Merah Muda","Kehilangan Bau dan Rasa","Kelelahan","Sakit Kepala, Sakit Tenggorokan, Hidung Tersumbat","Kebingungan Mendadak"};
         DefaultTableModel model = new DefaultTableModel(book,0);
@@ -52,12 +53,6 @@ public class asisten extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        tvPekerjaan = new javax.swing.JLabel();
-        tvHp = new javax.swing.JLabel();
-        tvAlamat = new javax.swing.JLabel();
-        tvKelamin = new javax.swing.JLabel();
-        tvUmur = new javax.swing.JLabel();
-        tvNama = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
@@ -97,6 +92,13 @@ public class asisten extends javax.swing.JFrame {
         btnSimpan = new javax.swing.JButton();
         btnReset = new javax.swing.JButton();
         btnKembali = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        tvNama = new javax.swing.JLabel();
+        tvUmur = new javax.swing.JLabel();
+        tvKelamin = new javax.swing.JLabel();
+        tvAlamat = new javax.swing.JLabel();
+        tvHp = new javax.swing.JLabel();
+        tvPekerjaan = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -125,20 +127,8 @@ public class asisten extends javax.swing.JFrame {
 
         jLabel6.setText("Pekerjaan");
 
-        tvPekerjaan.setText("jLabel7");
-
-        tvHp.setText("jLabel8");
-
-        tvAlamat.setText("jLabel9");
-
-        tvKelamin.setText("jLabel10");
-
-        tvUmur.setText("jLabel11");
-
-        tvNama.setText("jLabel12");
-
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel13.setText("FORM GEJALA");
+        jLabel13.setText("TABEL GEJALA");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -480,6 +470,53 @@ public class asisten extends javax.swing.JFrame {
             }
         });
 
+        jPanel2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
+        tvNama.setText("jLabel12");
+
+        tvUmur.setText("jLabel11");
+
+        tvKelamin.setText("jLabel10");
+
+        tvAlamat.setText("jLabel9");
+
+        tvHp.setText("jLabel8");
+
+        tvPekerjaan.setText("jLabel7");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(tvUmur)
+                    .addComponent(tvKelamin)
+                    .addComponent(tvAlamat)
+                    .addComponent(tvHp)
+                    .addComponent(tvPekerjaan)
+                    .addComponent(tvNama))
+                .addContainerGap(50, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(4, 4, 4)
+                .addComponent(tvNama)
+                .addGap(18, 18, 18)
+                .addComponent(tvUmur)
+                .addGap(18, 18, 18)
+                .addComponent(tvKelamin)
+                .addGap(18, 18, 18)
+                .addComponent(tvAlamat)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addComponent(tvHp)
+                .addGap(18, 18, 18)
+                .addComponent(tvPekerjaan)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -490,32 +527,6 @@ public class asisten extends javax.swing.JFrame {
                     .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                            .addComponent(jLabel4)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(tvAlamat))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                            .addComponent(jLabel5)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(tvHp))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                            .addComponent(jLabel6)
-                                            .addGap(18, 18, 18)
-                                            .addComponent(tvPekerjaan)))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel3)
-                                            .addComponent(jLabel2)
-                                            .addComponent(jLabel1))
-                                        .addGap(30, 30, 30)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(tvNama)
-                                            .addComponent(tvUmur)
-                                            .addComponent(tvKelamin))))
-                                .addGap(111, 111, 111))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(btnKembali, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -523,9 +534,20 @@ public class asisten extends javax.swing.JFrame {
                                         .addComponent(btnReset)
                                         .addGap(18, 18, 18)
                                         .addComponent(btnSimpan)))
-                                .addGap(41, 41, 41)))
+                                .addGap(41, 41, 41))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel1))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 192, Short.MAX_VALUE)))
+                        .addGap(0, 222, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(288, 288, 288)
@@ -535,43 +557,33 @@ public class asisten extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel13)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(7, 7, 7)
+                                .addComponent(jLabel1)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel2)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel3)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel4)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel5)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel6))
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(tvNama))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(tvUmur))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(tvKelamin))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(tvAlamat))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(tvHp))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
-                            .addComponent(tvPekerjaan))
-                        .addGap(21, 21, 21)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnSimpan)
                             .addComponent(btnReset))
                         .addGap(18, 18, 18)
-                        .addComponent(btnKembali)))
+                        .addComponent(btnKembali))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 228, Short.MAX_VALUE)
                 .addContainerGap())
@@ -740,66 +752,77 @@ public class asisten extends javax.swing.JFrame {
         
         if(y1.isSelected()){
             p1 = "Ya";
+            cek = cek+1;
         } else if (t1.isSelected()){
             p1 = "Tidak";
         }
         
         if(y2.isSelected()){
             p2 = "Ya";
+            cek = cek+1;
         } else if (t2.isSelected()){
             p2 = "Tidak";
         }
         
         if(y3.isSelected()){
             p3 = "Ya";
+            cek = cek+1;
         } else if (t3.isSelected()){
             p3 = "Tidak";
         }
         
         if(y4.isSelected()){
             p4 = "Ya";
+            cek = cek+1;
         } else if (t4.isSelected()){
             p4 = "Tidak";
         }
         
         if(y5.isSelected()){
             p5 = "Ya";
+            cek = cek+1;
         } else if (t5.isSelected()){
             p5 = "Tidak";
         }
         
         if(y6.isSelected()){
             p6 = "Ya";
+            cek = cek+1;
         } else if (t6.isSelected()){
             p6 = "Tidak";
         }
         
         if(y7.isSelected()){
             p7 = "Ya";
+            cek = cek+1;
         } else if (t7.isSelected()){
             p7 = "Tidak";
         }
         
         if(y8.isSelected()){
             p8 = "Ya";
+            cek = cek+1;
         } else if (t8.isSelected()){
             p8 = "Tidak";
         }
         
         if(y9.isSelected()){
             p9 = "Ya";
+            cek = cek+1;
         } else if (t9.isSelected()){
             p9 = "Tidak";
         }
         
         if(y10.isSelected()){
             p10 = "Ya";
+            cek = cek+1;
         } else if (t10.isSelected()){
             p10 = "Tidak";
         }
         
         if(y11.isSelected()){
             p11 = "Ya";
+            cek = cek+1;
         } else if (t11.isSelected()){
             p11 = "Tidak";
         }
@@ -809,8 +832,25 @@ public class asisten extends javax.swing.JFrame {
         } else {
             DefaultTableModel model = (DefaultTableModel) tblHasil.getModel();
             model.addRow(new Object[]{i,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11});
-            this.i++;
             setClear();
+            System.out.println(cek);
+            if (i == 7){
+                if(cek < 45){
+                    JOptionPane.showMessageDialog(null, "Anda diprediksi sehat!");
+                } else {
+                    JOptionPane.showMessageDialog(null, "Tetap jaga jarak dengan orang sekitar, bila gejala makin parah segera hubungi dokter !");
+                }
+            } else if (i == 14){
+                if(cek < 100){
+                    JOptionPane.showMessageDialog(null, "Selamat, Anda sehat!");
+                    Main.hapus(nama);
+                    this.setVisible(false);
+                    this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); 
+                } else {
+                    JOptionPane.showMessageDialog(null, "Segera hubungi dokter karena gejala tak kunjung hilang!");
+                }
+            }
+            this.i++;
         }
     }//GEN-LAST:event_btnSimpanActionPerformed
 
@@ -900,6 +940,7 @@ public class asisten extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JRadioButton t1;
     private javax.swing.JRadioButton t10;
@@ -977,8 +1018,8 @@ public class asisten extends javax.swing.JFrame {
     private void reset(){
         DefaultTableModel model = (DefaultTableModel) tblHasil.getModel();
         int row = model.getRowCount();
-        for(int i=row-1;i>=0;i--){           
-            model.removeRow(i);
+        for(int j=row-1;j>=0;j--){           
+            model.removeRow(j);
         };
     }
     
